@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './component/header';
-import Footer from "./component/footer";
-import Pokemon from "./component/Pokemon";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Pokemon from './components/Pokemon';
+import PokemonsList from './components/PokemonsList';
 
 function App() {
   return (
-    <div className="App">
-       <Header />
-        <Pokemon/>
-        <Footer/>
+    <div className='App'>
+      <Header />
+      <PokemonsList />
+      {/* <Footer /> */}
     </div>
   );
 }
