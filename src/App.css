@@ -1,8 +1,14 @@
 .pokey-div {
-  padding-top: 30px;
-  padding: 15px;
-  margin: 10px;
-  background-color: aliceblue;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgb(73, 117, 158);
+  width: 15%;
+  height: 100px;
+  color: white;
+}
+.pokey-div:hover {
+  background-color: rgb(103, 192, 192);
+  cursor: pointer;
 }
 .header {
   display: flex;
@@ -10,4 +16,19 @@
   background-color: chocolate;
   color: white;
   padding: 7px;
+}
+.pokemons-root {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.header-elem {
+  padding: 12px 5px;
+  color: white;
+}
+.pokemon-root {
+  padding: 30px;
 }

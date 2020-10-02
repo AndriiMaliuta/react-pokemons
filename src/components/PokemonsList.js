@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PokemonsDataService from '../api/PokemonsDataService';
 
-export default class PokemonsList extends Component {
+class PokemonsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +10,7 @@ export default class PokemonsList extends Component {
     };
   }
   componentDidMount() {
+    console.log('Inside Pokemons List page');
     PokemonsDataService.getAllPokemons()
       .then((response) => {
         console.log(response.data);
@@ -18,12 +20,18 @@ export default class PokemonsList extends Component {
   }
   render() {
     return (
-      <div>
+      <>
         <h2>Pokemons</h2>
-        {this.state.pokemons.map((pokemon) => (
-          <div>{pokemon.name}</div>
-        ))}
-      </div>
+        <div className='pokemons-root'>
+          {this.state.pokemons.map((pokemon) => (
+            <div className='pokey-div' key={pokemon.name}>
+              <Link to={`/pokemons/${pokemon.name}`}>{pokemon.name}</Link>
+            </div>
+          ))}
+        </div>
+      </>
     );
   }
 }
+
+export default PokemonsList;
