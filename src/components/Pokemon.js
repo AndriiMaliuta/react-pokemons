@@ -5,7 +5,14 @@ import PokemonsDataService from '../api/PokemonsDataService';
 class Pokemon extends Component {
   constructor(props) {
     super(props);
-    this.state = { id: '', name: '', image: '', weight: 0 };
+    this.state = {
+      id: '',
+      name: '',
+      image: '',
+      weight: 0,
+      order: 0,
+      height: 0,
+    };
   }
 
   componentDidMount() {
@@ -18,6 +25,8 @@ class Pokemon extends Component {
           name: response.data.name,
           image: response.data.sprites.other.dream_world.front_default,
           weight: response.data.weight,
+          order: response.data.order,
+          height: response.data.height,
         }));
         console.log(this.state.pokemon);
       })
@@ -27,8 +36,12 @@ class Pokemon extends Component {
   render() {
     return (
       <div className='pokemon-root'>
-        <h4>Pokemon {this.state.name}</h4>
+        <h4>
+          Pokemon <span className='pokey-name'>{this.state.name}</span>
+        </h4>
         <p>Weight: {this.state.weight}</p>
+        <p>Order: {this.state.order}</p>
+        <p>Height: {this.state.height}</p>
         {/* {this.state.image && <img src={this.state.image} alt='pokemon' />} */}
         {this.state.image ? (
           <img src={this.state.image} alt='pokemon' />
