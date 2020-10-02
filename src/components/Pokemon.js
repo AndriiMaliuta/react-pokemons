@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PokemonsDataService from '../api/PokemonsDataService';
+// import loading from '../../public/load'
 
 class Pokemon extends Component {
   constructor(props) {
@@ -28,7 +29,13 @@ class Pokemon extends Component {
       <div className='pokemon-root'>
         <h4>Pokemon {this.state.name}</h4>
         <p>Weight: {this.state.weight}</p>
-        {this.state.image && <img src={this.state.image} alt='pokemon' />}
+        {/* {this.state.image && <img src={this.state.image} alt='pokemon' />} */}
+        {/* {this.state.image ? (
+          <img src={this.state.image} alt='pokemon' />
+        ) : (
+          <img src='../../public/loading.gif' alt='loading' />
+        )} */}
+        <img src='../../public/loading.gif' />
       </div>
     );
   }
