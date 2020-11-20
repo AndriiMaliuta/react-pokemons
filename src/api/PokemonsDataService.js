@@ -23,6 +23,7 @@ class PokemonsDataService {
         }
       })
       .catch((error) => console.log(error));
+    // console.log(customPokemons);
     return customPokemons;
   }
   getPokemonByName(name) {

@@ -13,20 +13,19 @@ class PokemonsList extends Component {
     console.log('Inside Pokemons List page');
     // Get Pokemons with URLs
 
-    console.log(PokemonsDataService.getAllPokemons());
-    this.setState((state) => ({
-      pokemons: PokemonsDataService.getAllPokemonsWithUrls(),
-    }));
+    // this.setState((state) => ({
+    //   pokemons: PokemonsDataService.getAllPokemonsWithUrls(),
+    // }));
 
     // Get pokemons
 
-    // PokemonsDataService.getAllPokemons()
-    //   .then((response) => {
-    //     console.log(response.data);
+    PokemonsDataService.getAllPokemons()
+      .then((response) => {
+        console.log(response.data);
 
-    //     this.setState((state) => ({ pokemons: response.data.results }));
-    //   })
-    //   .catch((error) => console.log(error));
+        this.setState((state) => ({ pokemons: response.data.results }));
+      })
+      .catch((error) => console.log(error));
   }
   render() {
     return (

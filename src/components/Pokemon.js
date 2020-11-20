@@ -28,7 +28,7 @@ class Pokemon extends Component {
           order: response.data.order,
           height: response.data.height,
         }));
-        console.log(this.state.pokemon);
+        // console.log(this.state.pokemon);
       })
       .catch((error) => console.log(error));
   }
