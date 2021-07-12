@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PokemonsDataService from '../api/PokemonsDataService';
-// import loading from '../../public/loa'
+// import loading from '../../public/loadgit pull'
 
 class Pokemon extends Component {
   constructor(props) {
